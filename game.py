@@ -2,9 +2,11 @@ import random
 import sys
 import numpy as np
 import time
-from os import system, name
+import os
 import json
 
+
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 with open("highscores.json") as f:
     highscores = json.load(f)
 
@@ -278,10 +280,10 @@ def menu2():
         a = input()
 
 def clear():
-    if name == 'nt': # para windows
-        _ = system('cls')
+    if os.name == 'nt': # para windows
+        _ = os.system('cls')
     else: # para mac y linux
-        _ = system('clear')
+        _ = os.system('clear')
 
 def main():
     print("\n\n### ¡Welcome to John's Casino! ###\n| Press '1' to start a new game   |")
